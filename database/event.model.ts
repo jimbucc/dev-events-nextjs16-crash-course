@@ -159,12 +159,7 @@ EventSchema.pre<IEvent>('save', function (next) {
   }
 
   // Validate required array fields are not empty
-  if (this.agenda.length === 0) {
-    return next(new Error('Agenda cannot be empty'));
-  }
-  if (this.tags.length === 0) {
-    return next(new Error('Tags cannot be empty'));
-  }
+  next();
 
   next();
 });
